@@ -10,7 +10,7 @@ export class DynamoService {
 
   constructor(private configService: ConfigService) {
     this.client = new DynamoDBClient({
-      region: this.configService.get<string>('AWS_REGION')!,
+      region: 'us-east-1',
       credentials: {
         accessKeyId: this.configService.get<string>('AWS_ACCESS_KEY_ID')!,
         secretAccessKey: this.configService.get<string>(
