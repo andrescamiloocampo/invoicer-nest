@@ -1,8 +1,10 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import { DynamoService } from './dynamo.service';
 import { InvoiceSchema } from 'src/invoices/entities/invoice.entity';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
+  imports: [ConfigModule],
   providers: [DynamoService],
   exports: [DynamoService],
 })
